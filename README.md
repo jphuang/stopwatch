@@ -7,36 +7,39 @@ stopwatch for golang by spring stopwatch
 ```
 package main
 
-import (
-  "fmt"
 
-  "github.com/jphuang/stopwatch"
+import (
+	"fmt"
+	"github.com/jphuang/stopwatch"
+	"testing"
+	"time"
 )
 
 func main() {
-  stopwatch := &stop_watch.StopWatch{
+stopwatch := &stop_watch.StopWatch{
 		Id:           "test:" ,
 		KeepTaskList: true,
 	}
 	defer func() {
-		logger.Info(stopwatch.PrettyPrint())
+		fmt.Println(stopwatch.PrettyPrint())
 	}()
-   _= stopwatch.Start("GetUserCluster")
-  // Do some work.
-
-   _=  stopwatch.Stop()
+	_= stopwatch.Start("GetUserCluster")
+	// Do some work.
+	time.Sleep(time.Duration(2) * time.Second)
+	_= stopwatch.Stop()
 }
 ```
 
 ## log
 
 ```
-2021-09-08 19:15:51.113 [INF]  StopWatch 'TryToAddTaskPoint:10176': running time (millis) = 703
+StopWatch 'test:': running time (millis) = 2008
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-343  48%  GetUserCluster
-292  41%  findRunningAngelTask
-68  9%  findRunningAngelMultiTask
+2008  100%  GetUserCluster
+
+--- PASS: TestStopWatch (2.01s)
+PASS
 
 ```
