@@ -24,6 +24,6 @@ func main() {
    _= stopwatch.Start("GetUserCluster")
   // Do some work.
 
-   _=  watch.Stop()
+   _=  stopwatch.Stop()
 }
 ```
