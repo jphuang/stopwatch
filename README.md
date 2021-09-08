@@ -15,7 +15,7 @@ import (
 
 func main() {
   stopwatch := &stop_watch.StopWatch{
-		Id:           "TryToAddTaskPoint:" + strconv.Itoa(int(req.HostId)),
+		Id:           "test:" ,
 		KeepTaskList: true,
 	}
 	defer func() {
