@@ -27,3 +27,16 @@ func main() {
    _=  stopwatch.Stop()
 }
 ```
+
+## log
+
+```
+2021-09-08 19:15:51.113 [INF]  StopWatch 'TryToAddTaskPoint:10176': running time (millis) = 703
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+343  48%  GetUserCluster
+292  41%  findRunningAngelTask
+68  9%  findRunningAngelMultiTask
+
+```
